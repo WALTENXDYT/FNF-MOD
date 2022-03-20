@@ -1,0 +1,5 @@
+- 👋 Hi, I’m @WALTENXDYT
+- 👀 I’m interested in creating an fnf mod
+- 🌱 I’m currently learning how to create an fnf mod
+- 💞️ I’m looking to collaborate on a fnf mod or something else
+- 📫 How to reach me idk
