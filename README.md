@@ -1,8 +1,1 @@
--👋 Hi Im Walten
--😀Im A Normal Guy Thats Want To Learn Things
--🎮 I Actually Like Making Mods
--🚩 And I Need Help Making One
--🤔 U Want To Help?
--😂 I Will Be Really Happy If U Help Me
--⭐ One Of My Dreams Is To Create An Complete FnF Mod
--✨ See Ya Guys
+This Project is starting
