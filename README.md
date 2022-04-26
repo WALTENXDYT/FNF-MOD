@@ -1,5 +1,8 @@
-- 👋 Hi, I’m @WALTENXDYT
-- 👀 I’m interested in creating an fnf mod
-- 🌱 I’m currently learning how to create an fnf mod
-- 💞️ I’m looking to collaborate on a fnf mod or something else
-- 📫 How to reach me idk
+- Hi Im Walten
+- Im A Normal Guy Thats Want To Learn Things
+- I Actually Like Making Mods
+- And I Need Help Making One
+- U Want To Help?
+- I Will Be Really Happy If U Help Me
+- One Of My Dreams Is To Create An Complete FnF Mod
+- See Ya Guys
