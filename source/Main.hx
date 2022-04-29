@@ -10,16 +10,29 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
+import haxe.Timer;
+import openfl.events.Event;
+import openfl.system.System;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
+import meta.state.TitleState;
+import meta.data.ClientPrefs;
 
 class Main extends Sprite
 {
-	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
-	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
+	public static var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
+	public static var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
+
+	public static var mainClassState:Class<FlxState> = TitleState; // Determine the main class state of the game
+
+	public static var instance:Main;
+
 	var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
 	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
+
 	public static var fpsVar:FPS;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -32,6 +45,8 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+
+		instance = this;
 
 		if (stage != null)
 		{
@@ -70,8 +85,13 @@ class Main extends Sprite
 		#if !debug
 		initialState = TitleState;
 		#end
-	
+
+		instance = this;
+
 		ClientPrefs.loadDefaultKeys();
+		// fuck you, persistent caching stays ON during sex
+		FlxGraphic.defaultPersist = true;
+		// the reason for this is we're going to be handling our own cache smartly
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
@@ -82,11 +102,6 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
-
-		#if html5
-		FlxG.autoPause = false;
-		FlxG.mouse.visible = false;
 		#end
 	}
 }

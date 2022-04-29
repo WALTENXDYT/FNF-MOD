@@ -1,5 +1,6 @@
 package openfl.display;
 
+import meta.data.ClientPrefs;
 import haxe.Timer;
 import openfl.events.Event;
 import openfl.text.TextField;
@@ -46,7 +47,7 @@ class FPS extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat("_sans", 14, color);
+		defaultTextFormat = new TextFormat("VCR OSD Mono", 16, color);
 		autoSize = LEFT;
 		multiline = true;
 		text = "FPS: ";
@@ -78,7 +79,6 @@ class FPS extends TextField
 
 		var currentCount = times.length;
 		currentFPS = Math.round((currentCount + cacheCount) / 2);
-		if (currentFPS > ClientPrefs.framerate) currentFPS = ClientPrefs.framerate;
 
 		if (currentCount != cacheCount /*&& visible*/)
 		{
@@ -86,12 +86,12 @@ class FPS extends TextField
 			var memoryMegas:Float = 0;
 			
 			#if openfl
-			memoryMegas = Math.abs(FlxMath.roundDecimal(System.totalMemory / 1000000, 1));
+			memoryMegas = FlxMath.roundDecimal(System.totalMemory / 1000000, 1);
 			text += "\nMemory: " + memoryMegas + " MB";
 			#end
 
 			textColor = 0xFFFFFFFF;
-			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 2)
+			if (memoryMegas > 3000 || currentFPS <= ClientPrefs.framerate / 1.5)
 			{
 				textColor = 0xFFFF0000;
 			}
@@ -101,6 +101,8 @@ class FPS extends TextField
 			text += "\nstageDC: " + Context3DStats.contextDrawCalls(DrawCallContext.STAGE);
 			text += "\nstage3DDC: " + Context3DStats.contextDrawCalls(DrawCallContext.STAGE3D);
 			#end
+			if (ClientPrefs.showState)
+				text += "\nState: " + Main.mainClassState;
 
 			text += "\n";
 		}
