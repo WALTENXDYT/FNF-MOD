@@ -14,7 +14,7 @@ Credits:
 * [XtraXD1](https://github.com/ShadowMario/FNF-PsychEngine/pull/3192) - Show/Hide Weeks temporally + Getting/Setting on Source Code
 * [Yoshubs](https://github.com/Yoshubs/Forever-Engine-Legacy) - made Forever Engine, Main Inspiration
 
-> **Remember: this engine should be treated as nothing but a Mod/Fork of Psych Engine**
+**Remember: this engine should be treated as nothing but a Mod/Fork of Psych Engine**
 
 # Sections:
 
@@ -25,24 +25,24 @@ Credits:
 
 # How to Compile the Game, and what is needed to do so
 
-> ### Dependencies
+### Dependencies
 
 - Git
 - Haxe (LATEST VERSION ONLY, PLEASE, STOP USING 4.1.5!!!!)
 - Visual Studio Community (Windows Only)
 
-> ### OPTIONAL Dependencies
+### OPTIONAL Dependencies
 
 - Visual Studio Code (for modifying the code itself)
 
-> ### Recommended VS Code Extensions
+### Recommended VS Code Extensions
 
 - Lime
 - Bracket Pair Colorizer 2
 - HXCPP Debugger
 - Tabnine
 
-> ### Optional Visual Studio Code Extensions
+### Optional Visual Studio Code Extensions
 
 - Haxe blocks
 - Haxe Checkstyle
@@ -108,7 +108,7 @@ haxelib setup
 
 https://my.visualstudio.com/Downloads?q=visual%20studio%202017&wt.mc_id=o~msft~vscom~older-downloads
 
-> ### Visual Studo Community Setup
+### Visual Studo Community Setup
 
 Once you download and install VS Community, on the "Individual Components" tab, select:
 
@@ -221,7 +221,7 @@ this disables everything related to backgrounds and characters, leaving only the
 
 If you do not want the engine to use letter grades, toggle then using the gameplaySettings.json file on the settings folder.
 
-> ### FC Ratings
+### FC Ratings
 * MFC - Full Combo with Only Marvelouses *(can be disabled)*
 * SFC - Full Combo with at least 1 Sick/Only Sicks
 * GFC - Full Combo with at least 1 Good/Only Goods
